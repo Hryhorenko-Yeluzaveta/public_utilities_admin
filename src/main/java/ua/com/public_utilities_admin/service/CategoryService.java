@@ -1,0 +1,75 @@
+package ua.com.public_utilities_admin.service;
+
+import org.springframework.stereotype.Service;
+import ua.com.public_utilities_admin.entity.Category;
+import ua.com.public_utilities_admin.repository.CategoryRepository;
+
+import java.util.List;
+import java.util.Optional;
+
+@Service
+public class CategoryService {
+
+    private final CategoryRepository categoryRepository;
+
+    public CategoryService(CategoryRepository categoryRepository) {
+        this.categoryRepository = categoryRepository;
+    }
+
+
+    public Category saveCategory(String name, String descr, String image){
+
+        Category category = new Category();
+        category.setName(name);
+        category.setDescription(descr);
+        category.setImage(image);
+
+        Category category1 =  categoryRepository.save(category);
+
+        return  category1;
+    }
+
+    public Category updateCategory(Long id, String name, String descr, String image){
+
+        Category category = new Category();
+        category.setId(id);
+        category.setName(name);
+        category.setDescription(descr);
+        category.setImage(image);
+
+        Category category1 =  categoryRepository.save(category);
+
+        return  category1;
+    }
+
+    public void deleteCategory(Long id){
+        categoryRepository.deleteById(id);
+    }
+
+
+    public void deleteAllCategory(){
+        categoryRepository.deleteAll();
+    }
+
+
+    public List<Category> getCategoryList(){
+        return categoryRepository.findAll();
+    }
+
+    public Category getCategoryById(Long id){
+
+        Optional<Category> categories = categoryRepository.findById(id);
+
+        if(categories.isEmpty()){
+            return categories.get();
+        } else {
+            return new Category();
+        }
+    }
+
+    public Category getCategoryByName(String name) {
+
+        return categoryRepository.findByName(name);
+    }
+
+}
