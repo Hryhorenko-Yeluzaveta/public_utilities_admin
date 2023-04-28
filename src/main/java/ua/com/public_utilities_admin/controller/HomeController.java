@@ -3,15 +3,15 @@ package ua.com.public_utilities_admin.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
-import ua.com.public_utilities_admin.service.CategoryService;
+import ua.com.public_utilities_admin.service.CategoryManagerService;
 
 @Controller
 public class HomeController {
-    private  final CategoryService categoryService;
+    private  final CategoryManagerService categoryManagerService;
 
     @Autowired
-    public HomeController(CategoryService categoryService) {
-        this.categoryService = categoryService;
+    public HomeController(CategoryManagerService categoryManagerService) {
+        this.categoryManagerService = categoryManagerService;
     }
 
 
@@ -20,14 +20,14 @@ public class HomeController {
         return "index";
     }
 
-    @GetMapping("/products")
-    public String getProductAdmin(){
-        return "product";
+    @GetMapping("/rates")
+    public String getRateAdmin(){
+        return "rateAdminPage";
     }
 
     @GetMapping("/categories")
     public String getCategoryAdmin(){
-        return "category";
+        return "categoryAdminPage";
     }
 
     @GetMapping("/orders")

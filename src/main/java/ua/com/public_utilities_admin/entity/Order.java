@@ -2,12 +2,16 @@ package ua.com.public_utilities_admin.entity;
 
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
 import java.util.Date;
 import java.util.List;
 
-@Data
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
+@ToString
 @Entity
 @Table(name = "orders")
 public class Order {
@@ -17,6 +21,7 @@ public class Order {
     private Long id;
     private Date date;
     private String payment;
+    private boolean status;
 
     @ManyToOne
     @JoinColumn(name = "customer_id")
@@ -24,4 +29,5 @@ public class Order {
 
     @OneToMany(mappedBy = "order")
     private List<RateHasOrder> ratesHasOrder;
+
 }

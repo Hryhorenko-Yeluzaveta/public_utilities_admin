@@ -1,4 +1,4 @@
 package ua.com.public_utilities_admin.service;
 
-public class UserService {
+public class CustomerManagerService {
 }
