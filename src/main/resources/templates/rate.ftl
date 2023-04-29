@@ -6,6 +6,6 @@
 </head>
 <body>
 <h1>Rates</h1>
-<p>sad asd asd </p>
+<p></p>
 </body>
 </html>

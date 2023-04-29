@@ -1,8 +1,7 @@
 <#import "parts/templadmin.ftl" as p>
 <@p.pages>
     <h1>Rates</h1>
-    <p>sad asd asd asd</p>
-
+    <p></p>
     <hr>
     <h2> Save Rate to DB </h2>
 

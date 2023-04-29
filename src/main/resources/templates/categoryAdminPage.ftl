@@ -2,7 +2,7 @@
 <@p.pages>
 
     <h1>Categories</h1>
-    <p>sad asd asd asd</p>
+    <p></p>
 
     <hr>
     <h2> Save Category to DB </h2>
